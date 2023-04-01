@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>SignUp Page</title>
+{% endblock %}
+
+{% block content %}
+<div class="row bg-secondary">
+
+    <div class="col-md-7 jumbotron container">
+        <div class="card card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{form|crispy }}
+                <input type="submit" value="Sign up" class="btn btn-outline-success col-6">
+            </form>
+        </div>
+    </div>
+</div>
+    {% endblock %}

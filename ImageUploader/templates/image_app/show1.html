@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body bg-secondary">
+            <h5>OWNER: {{ user.email }} , Contact_Number: {{ user.contact_number }}</h5>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body mt-3">
+            <table class="table table-sm table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Image</th>
+                        <th>Created_by</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for obj in data %}
+                    <tr>
+                        <td>{{ obj.title }}</td>
+                        <td><img src="/media/{{obj.image}}" style="height: 50px; width: 80px;"></td>
+                        <td>{{ obj.created_by }}</td>
+                        <td>{{ user.role }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>Login Page</title>
+{% endblock %}
+
+{% block content %}
+<div class="row bg-secondary">
+
+    <div class="col-md-7 jumbotron container">
+        <div class="card card-body">
+            <form method="post" class="jumbotron container">
+                <h1 style="color: darkgray; text-align: center;">LOGIN FOR ALL</h1>
+                {% csrf_token %}
+                <label for="email"><b>ENTER EMAIL: </b></label>
+                <input type="text" id="em" name="email" class="form-control">
+
+                <br>
+                <br>
+
+                <label for="password"><b>ENTER PASSWORD: </b></label>
+                <input type="password" id="pw" name="password" class="form-control">
+
+                <br>
+                <br>
+
+                <input type="submit" value="LOGIN" class="btn btn-outline-success col-6">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
