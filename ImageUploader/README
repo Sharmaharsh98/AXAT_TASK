@@ -1,0 +1,5 @@
+'''
+
+layout is only visible to authenticated user only, all users can login though one login page.
+
+'''
