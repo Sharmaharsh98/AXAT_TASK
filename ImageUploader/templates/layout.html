@@ -47,7 +47,7 @@
                 </li>
                 {% endif %}
                 {% if user.is_authenticated %}
-                <li class="nav-item" style="padding-left: 800px;">
+                <li class="nav-item" style="padding-left: 700px;">
                     <a class="nav-link" href="{% url 'logout' %}"><span>{{user.email}}</span><button class="btn btn-danger">Logout</button></a>
                 </li>
                 {% else %}

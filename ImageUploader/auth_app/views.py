@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
 
 
+email = 0
+
 
 # Create your views here.
 def Signup_view(request):
@@ -27,6 +29,7 @@ def Login_view(request):
     template_name = 'auth_app/Login.html'
     context = {}
     if request.method == "POST":
+        global email
         email = request.POST.get('email')
         password = request.POST.get('password')
         print(email),'====>', print(password)

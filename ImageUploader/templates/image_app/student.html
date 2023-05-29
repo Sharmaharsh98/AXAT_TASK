@@ -11,8 +11,21 @@
             <h1 style="color: brown; text-align: center;">Image Uploader</h1><br>
             <hr>
             {% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit" class="btn btn-outline-success col-6">Upload</button>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">TITLE: </span>
+                <input type="text" name="title" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">IMAGES: </label>
+                <input class="form-control" type="file" id="formFile" name="image">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">CREATED BY: </span>
+                <input type="text" value="{{request.user}}" name="created_by" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" disabled>
+            </div>
+            <input type="submit" class="btn btn-outline-success col-6" value="UPLOAD"></input>
         </form>
     </div>
 </div>
